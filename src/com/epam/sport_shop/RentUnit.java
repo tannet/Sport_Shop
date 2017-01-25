@@ -2,7 +2,6 @@ package com.epam.sport_shop;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import java.util.ArrayList;
 
