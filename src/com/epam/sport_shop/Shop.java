@@ -1,7 +1,5 @@
 package com.epam.sport_shop;
 
-import sun.net.InetAddressCachePolicy;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -21,6 +19,10 @@ public class Shop {
         goodsInitialization();
     }
 
+    public Map<SportEquipment, Integer> getGoods() {
+        return goods;
+    }
+
     private void goodsInitialization() {
         try {
             input = new BufferedReader(new FileReader("goods.txt"));
@@ -35,23 +37,17 @@ public class Shop {
             System.err.println("ERROR. File not found. Please check the directory.");
         } catch (IOException e) {
             System.err.println("ERROR. Line can't be read. Check your file.");
-        } catch(NumberFormatException e) {
+        } catch (NumberFormatException e) {
             System.err.println("ERROR. Amount parameter (the 4th one) can not be converted to Integer. Check your file.");
         }
     }
 
     ArrayList<SportEquipment> itemsRentedByUser = new ArrayList<>();
 
-// RENTING MODULES IN THE SHOP
-    public void rentTheItem(SportEquipment itemToRent){
-        for (Entry<SportEquipment, Integer> entry : goods.entrySet()) {
-            //System.out.println(entry.getKey() + " " + entry.getValue());
-            System.out.println("Key: " + entry.getKey() + "    ||    Value: " + entry.getValue());
-        }
-        System.out.println(itemToRent);
-        System.out.println(goods.get(itemToRent));
-        int i = goods.get(itemToRent);
-        //System.out.println(i);
+    // RENTING MODULES IN THE SHOP
+    public void rentTheItem(Map items, SportEquipment itemToRent) {
+        System.out.println(items.containsKey(itemToRent));
+        //System.out.println(itemToRent.getCategory());
 //        if(goods.get(itemToRent) > 0){
 //            itemsRentedByUser.add(itemToRent);
 //            goods.get(itemToRent) = Integer.parseInt()
@@ -60,7 +56,12 @@ public class Shop {
 
 
 
-// PRINTING OF GOODS IN THE SHOP
+    public void returnTheItem(Map items, SportEquipment itemToReturn) {
+        //int i = Integer.parseInt(items.get(itemToReturn));
+    }
+
+
+    // PRINTING OF GOODS IN THE SHOP
     public void printFreeGoodsList() {
         System.out.println("Free Sport Equipment:");
         for (Entry<SportEquipment, Integer> entry : goods.entrySet()) {

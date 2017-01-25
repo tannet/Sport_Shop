@@ -8,11 +8,12 @@ public class Runner {
 		//shopItems.printRentedGoodsList();
 
 		//RENT TESTING
-		String[] userWanna = new String[] {"Badminton",  "Shuttlecock",  "5"};
-		SportEquipment s = new SportEquipment(userWanna);
-		//System.out.println(s);
+		String[] userWanna = new String[] {"Skiing ",  "Skiboots",  "80"};
+		SportEquipment s1 = new SportEquipment(userWanna);
+		SportEquipment s2 = new SportEquipment(userWanna);
+		//System.out.println(s1.equals(s2));
 
-		shopItems.rentTheItem(s);
+		shopItems.rentTheItem(shopItems.getGoods(), s1);
 	}
 
 }
