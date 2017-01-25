@@ -42,16 +42,16 @@ public class Shop {
         }
     }
 
-    ArrayList<SportEquipment> itemsRentedByUser = new ArrayList<>();
+    public ArrayList<SportEquipment> itemsRentedByUser = new ArrayList<>();
 
     // RENTING MODULES IN THE SHOP
     public void rentTheItem(Map items, SportEquipment itemToRent) {
-        System.out.println(items.containsKey(itemToRent));
+        System.out.println("Amount before renting:" + items.get(itemToRent));
         //System.out.println(itemToRent.getCategory());
-//        if(goods.get(itemToRent) > 0){
-//            itemsRentedByUser.add(itemToRent);
-//            goods.get(itemToRent) = Integer.parseInt()
-//        }
+        if((int)items.get(itemToRent) > 0){
+            itemsRentedByUser.add(itemToRent);
+            System.out.println("Amount of rents: " + itemsRentedByUser.size());
+        }
     }
 
 

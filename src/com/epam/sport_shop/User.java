@@ -11,6 +11,10 @@ public class User {
     private int amountOfRentedUnits;
     private ArrayList<SportEquipment> rentedUnits;
 
+    User(){
+
+    }
+
     private boolean isEnoughMoney(double price){
         if(getMoneyAvailable() >= price) {
             return true;
@@ -34,28 +38,29 @@ public class User {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getMoneyAvailable() {
         return moneyAvailable;
-    }
-
-    public void setMoneyAvailable(double moneyAvailable) {
-        this.moneyAvailable = moneyAvailable;
     }
 
     public int getAmountOfRentedUnits() {
         return amountOfRentedUnits;
     }
 
-    public void setAmountOfRentedUnits(int amountOfRentedUnits) {
-        this.amountOfRentedUnits = amountOfRentedUnits;
-    }
-
     public ArrayList<SportEquipment> getRentedUnits() {
         return rentedUnits;
+    }
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMoneyAvailable(double moneyAvailable) {
+        this.moneyAvailable = moneyAvailable;
+    }
+
+    public void setAmountOfRentedUnits(int amountOfRentedUnits) {
+        this.amountOfRentedUnits = amountOfRentedUnits;
     }
 
     public void setRentedUnits(ArrayList<SportEquipment> rentedUnits) {

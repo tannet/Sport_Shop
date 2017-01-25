@@ -14,6 +14,7 @@ public class RentUnit {
 	}
 
 	private void addPosition(SportEquipment position) {
+
 		units.add(position);
 	}
 
